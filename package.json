@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "expo": "~45.0.0",
+    "expo-barcode-scanner": "^11.3.0",
     "expo-status-bar": "~1.3.0",
+    "net": "^1.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
-    "react-native-web": "0.17.7"
+    "react-native-web": "0.17.7",
+    "sockjs-client": "^1.6.1",
+    "stompjs": "^2.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
