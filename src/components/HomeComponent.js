@@ -13,7 +13,7 @@ import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 
 export const HomeComponent = (props) => {
-  const { credientals, onClickButton, onClickScan } = props;
+  const { credientals, onClickButton, onClickScan, result } = props;
 
   return (
     <View style={styles.container}>
@@ -30,9 +30,14 @@ export const HomeComponent = (props) => {
       >
         <Text style={styles.appButtonText}>Logout</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={onClickScan} style={styles.appButtonContainer}>
-        <Text style={styles.appButtonText}>Scan QR Code</Text>
-      </TouchableOpacity>
+      {!result && (
+        <TouchableOpacity
+          onPress={onClickScan}
+          style={styles.appButtonContainer}
+        >
+          <Text style={styles.appButtonText}>Scan QR Code</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

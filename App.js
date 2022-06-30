@@ -23,7 +23,10 @@ export default function App() {
   const [result, setResult] = useState();
 
   useEffect(() => {
-    Alert.alert(result.toString());
+    if (result != undefined) {
+      setScan(false);
+      Alert.alert("readed!");
+    }
   }, [result]);
 
   const getRemoteData = () => {
@@ -54,15 +57,29 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {scan == true && <QRCodeScanner setResult={setResult} />}
-      {credientals && <StompExample jwtToken={credientals.access_token} />}
-      {credientals ? (
+      {scan == true && (
+        <QRCodeScanner setScan={setScan} setResult={setResult} />
+      )}
+
+      {credientals && scan == false && result != undefined && (
+        <StompExample
+          jwtToken={credientals.access_token}
+          room={result.room}
+          code={result.code}
+        />
+      )}
+      {credientals && scan == false && (
         <HomeComponent
+          result={result}
           credientals={credientals}
-          onClickButton={() => setCredientals()}
+          onClickButton={() => {
+            setCredientals();
+            setResult();
+          }}
           onClickScan={() => setScan(true)}
         />
-      ) : (
+      )}
+      {scan == false && credientals == undefined && (
         <LoginComponent
           values={values}
           setValues={setValues}

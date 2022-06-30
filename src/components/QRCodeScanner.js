@@ -2,12 +2,27 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button } from "react-native";
 import React, { useEffect } from "react";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import { BackHandler } from "react-native";
 
 export const QRCodeScanner = (props) => {
-  const { setResult } = props;
+  const { setResult, setScan } = props;
 
   const [hasPermission, setHasPermission] = React.useState(false);
-  const [scanData, setScanData] = React.useState();
+
+  function handleBackButtonClick() {
+    setScan(false);
+    return true;
+  }
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
+    return () => {
+      BackHandler.removeEventListener(
+        "hardwareBackPress",
+        handleBackButtonClick
+      );
+    };
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -25,16 +40,13 @@ export const QRCodeScanner = (props) => {
   }
 
   const handleBarCodeScanned = ({ type, data }) => {
-    setScanData(data);
-    setResult(data);
-    console.log(`Data: ${data}`);
-    console.log(`Type: ${type}`);
+    setResult(JSON.parse(data));
   };
 
   return (
     <BarCodeScanner
       style={StyleSheet.absoluteFillObject}
-      onBarCodeScanned={scanData ? undefined : handleBarCodeScanned}
+      onBarCodeScanned={handleBarCodeScanned}
     />
   );
 };
@@ -42,6 +54,8 @@ export const QRCodeScanner = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
