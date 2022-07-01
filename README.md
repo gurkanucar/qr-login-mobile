@@ -36,6 +36,10 @@
    password: pass
 ```
 
+ ### dont forget to change backend url
+ #### /src/constants
+ #### export const BASE_URL = "http://[IP ADDRESS]:8080";
+
 ## Example Images
 
 <img src="./images/ex1.jpeg" width="200">
