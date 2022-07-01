@@ -39,9 +39,23 @@
  ### dont forget to change backend url
  #### /src/constants
  #### export const BASE_URL = "http://[IP ADDRESS]:8080";
+ 
 
 ## Example Images
 
 <img src="./images/ex1.jpeg" width="200">
 <img src="./images/ex2.jpeg" width="200">
 <img src="./images/ex3.jpeg" width="200">
+
+
+### Example Video:
+
+[https://www.youtube.com/watch?v=i5btOYd0Exw](https://www.youtube.com/watch?v=i5btOYd0Exw)
+
+### Other components:
+
+#### [frontend](https://github.com/gurkanucar/qr-login-fe)
+#### [mobile](https://github.com/gurkanucar/qr-login-mobile)
+#### [backend](https://github.com/gurkanucar/jwt-project)
+
+
