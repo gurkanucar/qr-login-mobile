@@ -7,6 +7,7 @@
 ### Used Packages
 
 **sockjs-client & stompjs & net:** for connecting to stomp socket
+**expo-barcode-scanner:** qr code scanner
 
 ### How to run
 
