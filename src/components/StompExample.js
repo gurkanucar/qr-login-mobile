@@ -11,6 +11,7 @@ import {
 
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
+import { BASE_URL } from "../constants";
 
 export const StompExample = (props) => {
   const { jwtToken, room, code } = props;
@@ -28,7 +29,7 @@ export const StompExample = (props) => {
   };
 
   useEffect(() => {
-    const sock = new SockJS("http://192.168.0.10:8080/loginListener");
+    const sock = new SockJS(BASE_URLURL + "/loginListener");
     const client = Stomp.over(sock);
     setStompClient(client);
   }, []);

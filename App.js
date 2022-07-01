@@ -14,6 +14,7 @@ import { HomeComponent } from "./src/components/HomeComponent";
 import { LoginComponent } from "./src/components/LoginComponent";
 import { QRCodeScanner } from "./src/components/QRCodeScanner";
 import { StompExample } from "./src/components/StompExample";
+import { BASE_URL } from "./src/constants";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -30,7 +31,7 @@ export default function App() {
   }, [result]);
 
   const getRemoteData = () => {
-    fetch("http://192.168.0.10:8080/auth/login", {
+    fetch(BASE_URLE_URL+"/auth/login", {
       method: "POST",
       headers: {
         Accept: "application/json",
