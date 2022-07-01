@@ -38,8 +38,6 @@
 
 ## Example Images
 
-![example](./images/ex1.jpeg)
-
-![example](./images/ex2.jpeg)
-
-![example](./images/ex3.jpeg)
+<img src="./images/ex1.jpeg" width="200">
+<img src="./images/ex2.jpeg" width="200">
+<img src="./images/ex3.jpeg" width="200">
