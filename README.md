@@ -4,12 +4,9 @@
 
 &nbsp;
 
-
-
 ### Used Packages
 
 **sockjs-client & stompjs & net:** for connecting to stomp socket
-
 
 ### How to run
 
@@ -20,19 +17,20 @@
   cd qr-login-mobile
 ```
 
- #### install the packages
+#### install the packages
 
 ```bash
   npm install
 ```
 
 #### run
-    
+
 ```bash
   yarn android
 ```
 
 #### User credentials for testing
+
 ```bash
    username: grkn
    password: pass
@@ -40,8 +38,8 @@
 
 ## Example Images
 
-![example](./images/ex1.png)
+![example](./images/ex1.jpeg)
 
-![example](./images/ex2.png)
+![example](./images/ex2.jpeg)
 
-![example](./images/ex3.png)
+![example](./images/ex3.jpeg)
